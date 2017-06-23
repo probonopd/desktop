@@ -1,15 +1,5 @@
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-
 os:
-  - osx
-
-branches:
-  only:
-    - master
-    - /^__release-.*/
+  - trusty
 
 language: node_js
 node_js:
@@ -28,13 +18,5 @@ install:
   - npm install
 
 script:
-  - npm run lint
   - npm run build:prod
-  - npm run test:setup
-  - npm test
-
-after_success:
-  - npm run publish
-
-after_failure:
-  - npm run test:review
+  - find .
