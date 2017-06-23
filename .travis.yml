@@ -11,6 +11,15 @@ cache:
     - node_modules
     - $HOME/.electron
 
+addons:
+  apt:
+    packages:
+      - libgnome-keyring-dev
+      - icnsutils
+      - graphicsmagick
+      - xz-utils
+      - libsecret-1-dev
+
 install:
   - npm install -g npm@4.6.1
   - npm prune
