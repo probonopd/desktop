@@ -1,19 +1,12 @@
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-
-os:
-  - osx
-
-branches:
-  only:
-    - master
-    - /^__release-.*/
-
 language: node_js
 node_js:
   - "7"
+
+os:
+  - osx
+  - linux
+
+dist: trusty
 
 cache:
   timeout: 600
@@ -39,3 +32,13 @@ after_success:
 
 after_failure:
   - npm run test:review
+
+#branches:
+#  only:
+#    - master
+#    - /^__release-.*/
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
